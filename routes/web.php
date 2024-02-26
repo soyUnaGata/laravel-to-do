@@ -59,12 +59,9 @@ Route::get('/', function () use($tasks){
     return view('index', [
         'tasks' => $tasks
     ]);
-});
+})->name('tasks.index');
 
-Route::get('/greet/{name}', function ($name){
-    return 'Hello' . $name  . '!';
-});
+Route::get('/{id}', function ($id){
+    return 'One single task';
+})->name('tasks.show');
 
-Route::fallback(function(){
-    return 'Still excsist';
-});
